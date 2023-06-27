@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         mainViewModel = ViewModelProvider(this,viewModelFactory).get(ListViewModel::class.java)
         binding.recyclerview.adapter = adapter
         mainViewModel.productsLiveData.observe(this, Observer {
-          //  binding.products.text =  it.joinToString { x -> x.title + "\n\n" }
             binding.shimmerLayout.visibility = View.GONE
             binding.shimmerLayout.stopShimmer()
             adapter.setMovieList(it)
